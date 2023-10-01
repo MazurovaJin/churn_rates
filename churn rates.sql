@@ -11,8 +11,10 @@
  FROM subscriptions;
  
 /*Query Results
-start	    end
-2016-12-01	2017-03-30 */
+|start	 |   end|
+|------|------|
+|2016-12-01 |	2017-03-30|
+*/
 
 --Q3 We’ll be calculating the churn rate for both segments (87 and 30) over the first 3 months of 2017 (we can’t calculate it for December, since there are no subscription_end values yet). To get started, we create a temporary table of months.
 
@@ -31,7 +33,7 @@ UNION
 )
 SELECT * FROM months;
  
---Q4 We create a temporary table, cross_join, from subscriptions and your months. 
+--Q4 We create a temporary table, cross_join, from subscriptions and our months. 
 
 WITH months AS 
  (SELECT 
@@ -140,7 +142,7 @@ SELECT *
 FROM status
 LIMIT 10;
 
-*/
+/*
 id	month	is_active_87	is_active_30	is_canceled_87	is_canceled_30
 1	2017-01-01	1	0	0	0
 1	2017-02-01	0	0	1	0
