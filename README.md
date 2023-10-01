@@ -1,4 +1,4 @@
-# churn_rates
+# Churn_rates
 
 **SQL Project from Codecademy**
 
