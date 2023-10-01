@@ -58,10 +58,10 @@ FROM cross_join
 LIMIT 3;
 
 /*
-|id	|subscription_start	|subscription_end|	segment |	first_day	|last_day
-|1	|2016-12-01|	2017-02-01|	87|	2017-01-01|	2017-01-31|
-|1 |2016-12-01	|2017-02-01|	87|	2017-02-01|	2017-02-28|
-|1	|2016-12-01|	2017-02-01|	87|	2017-03-01|	2017-03-31| */
+|id|subscription_start|subscription_end|segment|first_day|last_day|
+|1|2016-12-01|2017-02-01|87|2017-01-01|2017-01-31|
+|1|2016-12-01|2017-02-01|87|2017-02-01|2017-02-28|
+|1|2016-12-01|2017-02-01|87|2017-03-01|2017-03-31| */
 
 /*Q5 We create a temporary table, status, from the cross_join table you created. This table should contain:
 -id selected from cross_join
