@@ -11,9 +11,9 @@
  FROM subscriptions;
  
 /*Query Results
-|start|end|
-|-----------|-----------|
-|2016-12-01 |	2017-03-30|
+|   start    |  end    |
+|-----------|----------|
+|2016-12-01|2017-03-30|
 */
 
 --Q3 We’ll be calculating the churn rate for both segments (87 and 30) over the first 3 months of 2017 (we can’t calculate it for December, since there are no subscription_end values yet). To get started, we create a temporary table of months.
