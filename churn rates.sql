@@ -11,8 +11,8 @@
  FROM subscriptions;
  
 /*Query Results
-|start	 |   end|
-|------|------|
+|start	     |   end     |
+|-----------|-----------|
 |2016-12-01 |	2017-03-30|
 */
 
@@ -58,10 +58,10 @@ FROM cross_join
 LIMIT 3;
 
 /*
-id	subscription_start	subscription_end	segment	first_day	last_day
-1	2016-12-01	2017-02-01	87	2017-01-01	2017-01-31
-1	2016-12-01	2017-02-01	87	2017-02-01	2017-02-28
-1	2016-12-01	2017-02-01	87	2017-03-01	2017-03-31 */
+|id	|subscription_start	|subscription_end|	segment |	first_day	|last_day
+|1	|2016-12-01|	2017-02-01|	87|	2017-01-01|	2017-01-31|
+|1|	2016-12-01	|2017-02-01|	87|	2017-02-01|	2017-02-28|
+|1	|2016-12-01|	2017-02-01|	87|	2017-03-01|	2017-03-31| */
 
 /*Q5 We create a temporary table, status, from the cross_join table you created. This table should contain:
 -id selected from cross_join
@@ -143,17 +143,17 @@ FROM status
 LIMIT 10;
 
 /*
-id	month	is_active_87	is_active_30	is_canceled_87	is_canceled_30
-1	2017-01-01	1	0	0	0
-1	2017-02-01	0	0	1	0
-1	2017-03-01	0	0	0	0
-2	2017-01-01	1	0	1	0
-2	2017-02-01	0	0	0	0
-2	2017-03-01	0	0	0	0
-3	2017-01-01	1	0	0	0
-3	2017-02-01	1	0	0	0
-3	2017-03-01	1	0	1	0
-4	2017-01-01	1	0	0	0 
+|id	|month	|is_active_87	|is_active_30	|is_canceled_87	|is_canceled_30|
+|1 |	2017-01-01|	1	0	0	0
+|1	| 2017-02-01|	0	0	1	0
+|1	| 2017-03-01|	0	0	0	0
+|2 | 2017-01-01|	1	0	1	0
+|2	| 2017-02-01|	0	0	0	0
+|2 |	2017-03-01|	0	0	0	0
+|3 |	2017-01-01|	1	0	0	0
+|3 |	2017-02-01|	1	0	0	0
+|3 |	2017-03-01|	1	0	1	0
+|4 |	2017-01-01|	1	0	0	0 
 */
 
 /*Q7 We create a status_aggregate temporary table that is a SUM of the active and canceled subscriptions for each segment, for each month.
@@ -218,10 +218,10 @@ SELECT *
 FROM status_aggregate;
 
 /*
-month	sum_active_87	sum_active_30	sum_canceled_87	sum_canceled_30
-2017-01-01	278	291	70	22
-2017-02-01	462	518	148	38
-2017-03-01	531	716	258	84
+|month	sum_active_87	|sum_active_30	|sum_canceled_87	|sum_canceled_30
+|2017-01-01|	278	|291	|70	 |22
+|2017-02-01|	462	|518	|148	|38
+|2017-03-01|	531	|716	|258	|84
 */
 
 
@@ -284,10 +284,11 @@ CASE
    
 /*
    Query Results
-month	churn_rate_87	churn_rate_30
-2017-01-01	0.25	0.08
-2017-02-01	0.32	0.07
-2017-03-01	0.49	0.12
+|month	|churn_rate_87	|churn_rate_30
+|2017-01-01	|0.25	|0.08
+|2017-02-01	|0.32	|0.07
+|2017-03-01	|0.49	|0.12
+We see, that segment 30 is much better in churn rates, maybe more specific. They are able to attract more people
 */   
    
 
