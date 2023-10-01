@@ -11,7 +11,7 @@
  FROM subscriptions;
  
 /*Query Results
-|start	     |   end     |
+|start	     |end     |
 |-----------|-----------|
 |2016-12-01 |	2017-03-30|
 */
@@ -60,7 +60,7 @@ LIMIT 3;
 /*
 |id	|subscription_start	|subscription_end|	segment |	first_day	|last_day
 |1	|2016-12-01|	2017-02-01|	87|	2017-01-01|	2017-01-31|
-|1|	2016-12-01	|2017-02-01|	87|	2017-02-01|	2017-02-28|
+|1 |2016-12-01	|2017-02-01|	87|	2017-02-01|	2017-02-28|
 |1	|2016-12-01|	2017-02-01|	87|	2017-03-01|	2017-03-31| */
 
 /*Q5 We create a temporary table, status, from the cross_join table you created. This table should contain:
@@ -218,10 +218,10 @@ SELECT *
 FROM status_aggregate;
 
 /*
-|month	sum_active_87	|sum_active_30	|sum_canceled_87	|sum_canceled_30
-|2017-01-01|	278	|291	|70	 |22
-|2017-02-01|	462	|518	|148	|38
-|2017-03-01|	531	|716	|258	|84
+|month	sum_active_87|sum_active_30|sum_canceled_87|sum_canceled_30
+|2017-01-01|278	|291	|70	|22
+|2017-02-01|462	|518	|148	|38
+|2017-03-01|531	|716	|258	|84
 */
 
 
