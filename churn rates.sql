@@ -11,7 +11,7 @@
  FROM subscriptions;
  
 /*Query Results
-|start	     |end     |
+|start	     |end        |
 |-----------|-----------|
 |2016-12-01 |	2017-03-30|
 */
